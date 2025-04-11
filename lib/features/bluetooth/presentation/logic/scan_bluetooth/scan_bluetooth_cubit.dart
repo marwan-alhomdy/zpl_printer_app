@@ -26,6 +26,7 @@ class ScanBluetoothCubit extends Cubit<ScanBluetoothState> {
   void initScanBluetooth() {
     _scanResultsSubscription = FlutterBluePlus.scanResults.listen(
       (results) {
+        log("results: $results");
         scanResults = results;
         emit(ScanBluetooth1(DateTime.now()));
       },
@@ -47,15 +48,25 @@ class ScanBluetoothCubit extends Cubit<ScanBluetoothState> {
     super.close();
   }
 
+  // Future<void> requestPermissions() async {
+  //   log("requestPermissions");
+  //   await [
+  //     Permission.location,
+  //     Permission.bluetoothScan,
+  //     Permission.bluetoothConnect,
+  //   ].request();
+  // }
+
   Future onScanPressed() async {
     try {
       log("======================");
       if (Platform.isAndroid) {
+        //await requestPermissions();
         await FlutterBluePlus.startScan(
-          androidUsesFineLocation: true,
-          androidScanMode: AndroidScanMode.lowPower,
-          withServices: [Guid("180D")],
-          withNames: ["Bluno"],
+          // androidUsesFineLocation: true,
+          // androidScanMode: AndroidScanMode.lowPower,
+          // withServices: [Guid("180D")],
+          // withNames: ["Bluno"],
           timeout: const Duration(seconds: 15),
         );
       } else {

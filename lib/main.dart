@@ -4,6 +4,7 @@ import 'package:zpl_printer_app/core/color_app.dart';
 import 'features/home/presentation/pages/home.view.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

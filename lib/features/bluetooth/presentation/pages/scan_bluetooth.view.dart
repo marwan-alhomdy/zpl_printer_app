@@ -62,18 +62,18 @@ class BodyScanButtonWidget extends StatelessWidget {
       onRefresh: context.read<ScanBluetoothCubit>().onRefresh,
       child: BlocBuilder<ScanBluetoothCubit, ScanBluetoothState>(
         builder: (context, state) {
+          final scanBluetoothCubit = context.read<ScanBluetoothCubit>();
           return ListView(
             children:
-                context
-                    .read<ScanBluetoothCubit>()
-                    .scanResults
+                scanBluetoothCubit.scanResults
                     .map(
                       (scanResult) => ScanResultTileWidget(
                         result: scanResult,
                         onTap:
-                            () => context
-                                .read<ScanBluetoothCubit>()
-                                .onConnectPressed(scanResult.device, context),
+                            () => scanBluetoothCubit.onConnectPressed(
+                              scanResult.device,
+                              context,
+                            ),
                       ),
                     )
                     .toList(),

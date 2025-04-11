@@ -38,6 +38,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   equatable: ^2.0.7
   iconsax_flutter: ^1.0.0
+  permission_handler: ^11.4.0
 
 dev_dependencies:
   flutter_test:
