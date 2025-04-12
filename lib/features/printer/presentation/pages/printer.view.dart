@@ -58,18 +58,18 @@ class ZplPrinter {
 ^FO20,${yPosition += 30}^GB576,2,2^FS
 
 
-^CF0,25
-^FO20,${yPosition += 20}^FDStock Detalis :^FS
-^FO20,${yPosition += 40}^GB576,2,2^FS
+// ^CF0,25
+// ^FO20,${yPosition += 20}^FDStock Detalis :^FS
+// ^FO20,${yPosition += 40}^GB576,2,2^FS
 
-^CF0,20
-^FO20,${yPosition += 10}^FDDescription^FS
-^FO250,$yPosition^FDCode^FS
-^FO350,$yPosition^FDUOM^FS
-^FO450,$yPosition^FDQTY^FS
+// ^CF0,20
+// ^FO20,${yPosition += 10}^FDDescription^FS
+// ^FO250,$yPosition^FDCode^FS
+// ^FO350,$yPosition^FDUOM^FS
+// ^FO450,$yPosition^FDQTY^FS
 
 
-${getProducts()}  // تمرير yPosition المحدث بعد الطباعة
+//${getProducts()}  // تمرير yPosition المحدث بعد الطباعة
 
 ^FO20,${yPosition += 50}^GB576,2,2^FS
 
